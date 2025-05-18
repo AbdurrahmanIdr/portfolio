@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Abdurrahman Idris | Software Engineer Portfolio</title>
+<style>
+  /* Reset */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0f1c2f;
+    color: #e0e0e0;
+    overflow-x: hidden;
+  }
+  a {
+    color: #f0c674;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #ffda77;
+  }
+  /* Container */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  /* Hero Section */
+  header {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #142c54, #0f1c2f);
+  }
+  header img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #f0c674;
+    margin-bottom: 1rem;
+    object-fit: cover;
+    box-shadow: 0 0 15px #f0c674aa;
+    transition: transform 0.3s ease;
+  }
+  header img:hover {
+    transform: scale(1.1) rotate(5deg);
+  }
+  header h1 {
+    font-size: 3.2rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.2rem;
+    font-weight: 900;
+    color: #f0c674;
+  }
+  header p {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #b4a25a;
+    margin-bottom: 1.8rem;
+    max-width: 550px;
+  }
+  header .btn-group {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  header .btn {
+    padding: 0.9rem 2rem;
+    border: 2px solid #f0c674;
+    background: transparent;
+    color: #f0c674;
+    font-weight: 600;
+    font-size: 1.05rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  header .btn:hover {
+    background-color: #f0c674;
+    color: #0f1c2f;
+  }
+
+  /* Section Titles */
+  section h2 {
+    font-size: 2.2rem;
+    border-left: 5px solid #f0c674;
+    padding-left: 1rem;
+    margin-bottom: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: #f0c674;
+  }
+
+  /* About */
+  #about {
+    background: #162b49;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  #about strong {
+    color: #ffda77;
+  }
+
+  /* Projects */
+  #projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  .project-card {
+    background: #1f365f;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px #0b1831cc;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+  }
+  .project-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 30px #f0c674cc;
+  }
+  .project-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    filter: brightness(0.85);
+    transition: filter 0.4s ease;
+  }
+  .project-card:hover .project-img {
+    filter: brightness(1);
+  }
+  .project-content {
+    padding: 1.5rem;
+  }
+  .project-title {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #f0c674;
+    margin-bottom: 0.5rem;
+  }
+  .project-desc {
+    font-size: 1rem;
+    color: #ccc;
+    line-height: 1.3;
+  }
+  .project-links {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1.2rem;
+  }
+  .project-links a {
+    background: #28467d;
+    padding: 0.6rem 1rem;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 8px #142c54aa;
+    transition: background-color 0.3s ease;
+  }
+  .project-links a:hover {
+    background: #f0c674;
+    color: #162b49;
+  }
+
+  /* Skills */
+  #skills {
+    max-width: 850px;
+    margin: 0 auto 3rem auto;
+  }
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  .skill {
+    background: #1c2a4a;
+    border-radius: 50px;
+    padding: 0.8rem 1.5rem;
+    font-weight: 700;
+    color: #f0c674;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px #0b1831cc;
+    user-select: none;
+    cursor: default;
+    transition: transform 0.25s ease;
+  }
+  .skill:hover {
+    transform: scale(1.1);
+  }
+
+  /* Contact */
+  #contact {
+    background: #162b49;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+    text-align: center;
+  }
+  #contact p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+  #contact a {
+    display: inline-block;
+    margin: 0 1rem;
+    font-size: 2rem;
+    color: #f0c674;
+    transition: color 0.3s ease;
+  }
+  #contact a:hover {
+    color: #ffda77;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: #888;
+    user-select: none;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <img src="profile.jpg" alt="Abdurrahman Idris" />
+  <h1>Abdurrahman Idris</h1>
+  <p>Senior Software Engineer | Backend Specialist | Automation Expert</p>
+  <div class="btn-group">
+    <a href="#projects" class="btn">View Projects</a>
+    <a href="#contact" class="btn">Contact Me</a>
+  </div>
+</header>
+
+<div class="container">
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I’m <strong>Abdurrahman Idris</strong>, a passionate software engineer specializing in backend development and automation. 
+      With hands-on experience building scalable APIs, optimizing databases, and deploying reliable applications, I help companies deliver robust and efficient solutions.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>Selected Projects</h2>
+    <div class="project-card">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80" alt="Talent Trade Platform" class="project-img" />
+      <div class="project-content">
+        <div class="project-title">Talent Trade Platform</div>
+        <div class="project-desc">A secure professional network platform built with Flask & MySQL, focused on data integrity and authentication.</div>
+        <div class="project-links">
+          <a href="https://github.com/AbdurrahmanIdr/talent_trade" target="_blank" rel="noopener">Live Demo</a>
+          <a href="https://github.com/AbdurrahmanIdr/talent_trade" target="_blank" rel="noopener">Source Code</a>
+        </div>
+      </div>
+    </div>
+    <div class="project-card">
+      <img src="pro2.png" alt="Flood Detection System" class="project-img" />
+      <div class="project-content">
+        <div class="project-title">Flood Detection System</div>
+        <div class="project-desc">Real-time Raspberry Pi based flood monitoring system providing timely alerts.</div>
+        <div class="project-links">
+          <a href="https://beebotte.com/dash/8f079aa0-6938-11ef-8773-493c1a9a72df?shareid=shareid_K1ESIzyKiYx86OhG" rel="noopener">Live Demo</a>
+          <a href="https://github.com/AbdurrahmanIdr/sensor" rel="noopener">Source Code</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Core Skills</h2>
+    <div class="skills-grid">
+      <div class="skill">Python / Flask</div>
+      <div class="skill">REST API Design</div>
+      <div class="skill">MySQL & Databases</div>
+      <div class="skill">DevOps & Automation</div>
+      <div class="skill">Git & Collaboration</div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Get In Touch</h2>
+    <p>Feel free to reach out via email or LinkedIn.</p>
+    <a href="mailto:abdurrahmaneedrees@gmail.com" aria-label="Email">📧</a>
+    <a href="https://linkedin.com/in/abdurrahman-idris-0198-585340107" target="_blank" rel="noopener" aria-label="LinkedIn">🔗</a>
+    <a href="https://github.com/AbdurrahmanIdr" target="_blank" rel="noopener" aria-label="GitHub">🐙</a>
+  </section>
+</div>
+
+<footer>
+  &copy; 2025 Abdurrahman Idris. All rights reserved.
+</footer>
+
+</body>
+</html>
+
