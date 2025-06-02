@@ -175,6 +175,32 @@
   #about strong {
     color: var(--accent-hover);
   }
+  #about .fun-fact {
+    margin-top: 1rem;
+    font-style: italic;
+    color: var(--text-color);
+  }
+  #about .linkedin-badge {
+    margin-top: 1.5rem;
+  }
+  /* Elevator Pitch */
+  #elevator-pitch {
+    background: var(--section-bg);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 3rem;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    box-shadow: 0 4px 10px var(--shadow-color);
+  }
+  #elevator-pitch video {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+  }
   /* Projects */
   #projects {
     display: grid;
@@ -275,7 +301,7 @@
     border-radius: 12px;
     margin-bottom: 3rem;
     max-width: 850px;
-    margin-left: auto;
+    margin left: auto;
     margin-right: auto;
     box-shadow: 0 4px 10px var(--shadow-color);
   }
@@ -339,6 +365,7 @@
 <nav>
   <ul>
     <li><a href="#about">About</a></li>
+    <li><a href="#elevator-pitch">Pitch</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#blog">Blog</a></li>
@@ -360,9 +387,20 @@
   <section id="about">
     <h2>About Me</h2>
     <p>
-      I’m <strong>Abdurrahman Idris</strong>, a passionate software engineer specializing in backend development and automation. 
-      With hands-on experience building scalable APIs, optimizing databases, and deploying reliable applications, I help companies deliver robust and efficient solutions.
+      Abdurrahman Idris is a backend specialist on a mission to build the digital infrastructure that powers economic growth (SDG 9). With expertise in Python, Flask, and database optimisation, I develop high-performance APIs that handle millions of transactions. My work on the Talent Trade Platform demonstrated how robust backend systems can create opportunities in emerging markets. When not architecting databases, you'll find me mentoring junior developers or tinkering with IoT devices - my smart coffee maker being my proudest (and most caffeinated) achievement.
     </p>
+    <p class="fun-fact">Fun Fact: I once automated my morning coffee routine using a Raspberry Pi and IoT sensors.</p>
+    <div class="linkedin-badge">
+      <a href="https://www.linkedin.com/in/abdurrahman-idris-0198-585340107/" target="_blank" rel="noopener">View My LinkedIn Profile</a>
+    </div>
+  </section>
+
+  <section id="elevator-pitch">
+    <h2>Elevator Pitch</h2>
+    <video controls>
+      <source src="elevator.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
   </section>
 
   <section id="projects">
@@ -401,6 +439,9 @@
       <div class="skill">MySQL & Databases</div>
       <div class="skill">DevOps & Automation</div>
       <div class="skill">Git & Collaboration</div>
+      <div class="skill">System Architecture</div>
+      <div class="skill">Performance Benchmarking</div>
+      <div class="skill">Technical Writing</div>
     </div>
   </section>
 
@@ -421,7 +462,7 @@
     <h2>Get In Touch</h2>
     <p>Feel free to reach out via email or LinkedIn.</p>
     <a href="mailto:abdurrahmaneedrees@gmail.com" aria-label="Email">📧</a>
-    <a href="https://linkedin.com/in/abdurrahman-idris-0198-585340107" target="_blank" rel="noopener" aria-label="LinkedIn">🔗</a>
+    <a href="https://www.linkedin.com/in/abdurrahman-idris-0198-585340107/" target="_blank" rel="noopener" aria-label="LinkedIn">🔗</a>
     <a href="https://github.com/AbdurrahmanIdr" target="_blank" rel="noopener" aria-label="GitHub">🐙</a>
   </section>
 </div>
